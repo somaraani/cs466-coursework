@@ -1,0 +1,109 @@
+
+body {
+    margin: 0;
+    background-color: #344955;
+    color: white;
+    padding-bottom: 10em;
+}
+
+h1 {
+    color: #F9AA33;
+    margin-bottom: 0.5em;
+    margin-top: 3em;
+}
+
+h1 span {
+    font-style: italic;
+}
+
+hr {
+    color: #344955;
+    margin-top: 0;
+    border-top-width: 0.3em;
+    margin-bottom: 2em;
+}
+
+p, ul {
+    font-size: 1.2em;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+/* --------- NAV BAR --------- */
+
+.nav {
+    background-color: #232F34;
+    height: 3em;
+    line-height: 3em;
+    border-bottom: 3px solid #F9AA33;
+    position: fixed;
+    width: 100%;
+}
+
+.nav ul {
+    width: 80%;
+    margin: 0 auto;    
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 3em;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    height: 3em;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+/* --------- COVER PAGE --------- */
+
+.cover {
+    padding-top: 4.5em;
+    padding-bottom: 2em;
+}
+
+#course {
+    margin-bottom: 0.2em;
+    margin-top: 1.5em;
+}
+
+#coursename {
+    margin-top: 0;
+    font-weight: 500;
+    padding-top: 0em;
+}
+
+#assignment {
+    margin-top: 2em;
+    font-style: italic;
+    color: #a3a3a3;
+}
+
+#name {
+    margin-top: 2em;
+    margin-bottom: 0.2em;
+    color: #F9AA33;
+}
+
+#studentid {
+    margin-top: 0;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+.timing span {
+    font-style: italic;
+}
