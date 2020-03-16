@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:res = "http://aani.ca/resume" targetNamespace = "http://aani.ca/resume">
+
+    <element name="resume" type="res:ResumeType"/>
+
+    <complexType name="ResumeType">
+        <all>
+            <element name="general" type="res:GeneralType"/>
+            <element name="education" type="res:EducationType"/>
+            <element name="work" type="res:WorkType"/>
+        </all>
+    </complexType>
+
+    <complexType name="GeneralType">
+        <sequence>
+            <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="email" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="linkedin" type="anyURI" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="EducationType">
+        <sequence>
+            <element name="institute" type="res:InstituteType" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="InstituteType">
+        <all>
+            <element name="name" type="string"/>
+            <element name="degree" type="string"/>
+            <element name="graduated" type="date"/>
+        </all>
+    </complexType>
+
+    <complexType name="WorkType">
+        <sequence>
+            <element name="work" type="res:JobType" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="JobType">
+        <sequence>
+            <element name="title" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="company" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="start" type="date" minOccurs="1" maxOccurs="1"/>
+            <element name="end" type="date" minOccurs="1" maxOccurs="1"/>
+            <element name="description" type="string" minOccurs="1" maxOccurs="unbounded"/>        
+        </sequence>
+    </complexType>
+
+</schema>
