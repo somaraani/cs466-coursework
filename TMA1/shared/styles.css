@@ -12,6 +12,10 @@ h1 {
     margin-top: 3em;
 }
 
+h2 {
+    color: #F9AA33;
+}
+
 h1 span {
     font-style: italic;
 }
@@ -31,8 +35,6 @@ p, ul {
     width: 80%;
     margin: 0 auto;
 }
-
-
 
 /* --------- NAV BAR --------- */
 
@@ -65,6 +67,68 @@ p, ul {
 button {
     height: 3em;
     font-size: 1em;
+    margin-top: 1em;
+}
+
+/* --------- SIDE NAV --------- */
+
+.sidenav {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    height: 100%; 
+    background-color: #232F34;
+    top: 0;
+    position: fixed; 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidenav h1 {
+    margin: 0.5em;
+    color: white;
+}
+
+.sidenav .header a {
+    font-weight: 600;
+}
+
+.sidenav .sub a {
+    padding-left: 2.5em;
+}
+
+.sidenav .selected {
+    background-color: #F9AA33;
+}
+
+.sidenav .selected a:hover {
+    background-color: #F9AA33 !important;
+}
+
+.sidenav ul {
+    list-style-type: none;
+}
+
+.sidenav li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+.sidenav li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.sidecontent {
+    margin-left: 25%;
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+.sidecontent h1 {
     margin-top: 1em;
 }
 
@@ -106,4 +170,21 @@ button {
 
 .timing span {
     font-style: italic;
+}
+
+/* --------- CODE --------- */
+
+.code {
+    background-color: #283842;
+    width: 60%;
+    padding-left: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    margin-left: 2.5em;
+}
+
+.code p {
+    line-height: 0.5em;
+    color: #ebebeb;
+    font-family: "Courier New", Courier, monospace;
 }
