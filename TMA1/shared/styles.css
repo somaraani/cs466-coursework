@@ -4,6 +4,7 @@ body {
     background-color: #344955;
     color: white;
     padding-bottom: 10em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -27,8 +28,9 @@ hr {
     margin-bottom: 2em;
 }
 
-p, ul {
-    font-size: 1.2em;
+span {
+    color: #d6d6d6;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .content {
@@ -115,6 +117,7 @@ button {
     color: white;
     padding: 1em 1em;
     text-decoration: none;
+    font-size: 0.9em;
 }
 
 .sidenav li a:hover {
@@ -176,7 +179,7 @@ button {
 
 .code {
     background-color: #283842;
-    width: 60%;
+    width: 65%;
     padding-left: 1em;
     padding-top: 0.1em;
     padding-bottom: 0.1em;
@@ -184,7 +187,64 @@ button {
 }
 
 .code p {
-    line-height: 0.5em;
+    font-size: 0.9em;
+    line-height: 1.5em;
     color: #ebebeb;
     font-family: "Courier New", Courier, monospace;
+}
+
+/* --------- RAW --------- */
+
+.raw {
+    background-color: white;
+    width: 65%;
+    padding-left: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    margin-left: 2.5em;   
+    margin-top: 3em;
+    margin-bottom: 3em;
+    color: black !important; 
+}
+
+.notop {
+    margin-top: 0;
+}
+
+.raw hr {
+    width: 95%;
+}
+
+.raw h1 {
+    color: black;
+}
+
+.raw h2 {
+    color: black; 
+}
+
+.raw form {
+    padding: 1em;
+}
+
+.raw input {
+    display: block;
+    margin: 1em;
+}
+
+/* --------- QUIZ --------- */
+
+.quiz label {
+    display: block;
+}
+
+.quiz h1 {
+    color: white;
+    font-size: 1.2em;
+}
+
+.quiz .submit {
+    margin-top: 2em;
+    padding: 0.5em;
+    font-size: 1em;
 }

@@ -1,0 +1,27 @@
+<quiz>
+    <question>
+        <description>Which of the following is false?</description>
+        <options>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 2</option>
+        </options>
+    </question>
+
+    <question>
+        <description>Which of the following is true?</description>
+        <options>
+            <option>Option 1</option>
+            <option>Option 2</option>
+        </options>
+    </question>
+
+    <question>
+        <description>Which of the following is the truest of all?</description>
+        <options>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 69</option>
+        </options>
+    </question>
+</quiz>

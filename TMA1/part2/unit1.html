@@ -1,28 +1,210 @@
 <h1>Unit 1 - Intro to the Web </h1>
 <p>This unit will teach you the most basic buiding
-    blocks of any website or web applications. That is HTML and CSS.</p>
+    blocks of any website or web application. That is HTML.</p>
+
+<h2 id="1">1.1 Basics of HTML</h2>
+<p>HTML is the basic building block of most websites. HTML stands for Hypertext Markup Language, and is what defines the
+    content and structure of a webpage.</p>
+
+<p>To get started, open your text editor and create a new file. Call it <span>index.html</span>.</p>
+<p>Paste the following code into your textfile, and save it.</p>
 
 <div class="code">
-    <p>var x = 3;</p>
-    <p>if (x == 3)</p>
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;h1&gt;A heading&lt;/h1&gt; <br />
+        &emsp;&emsp;&lt;p&gt;Some text here&lt;/p&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
 </div>
 
-    <p>Space here</p>
-    <p>bs</p>
-    <p>bs</p>
-    <p>things</p>
-    <p>Space here</p>
-    <p>bs</p>
-    <p>bs</p>
-    <p>things</p>
-    <p>Space here</p>
-    <p>bs</p>
-    <p>bs</p>
-    <p>things</p>
-    <p>Space here</p>
-    <p>bs</p>
-    <p>bs</p>
-    <p>things</p>
+<p>The first line <span>&lt;!DOCTYPE html&gt;</span> specifies that this is an HTML document.</p>
+<p>HTML syntax is made up of tags, that are enclosed in <span>&lt;&gt;</span></p>
 
-<h2 id="1">1.1 HTML</h2>
-<p>HTML is the basic building block of most websites.</p>
+<p>Most tags need to be closed by having a <span>/</span> in the closing tag. As you can see from the example, the
+    <span>&lt;body&gt;</span> tag is closed by <span>&lt;/body&gt;</span>. That is the same for both <span>h1</span> and
+    <span>p</span>.</p>
+
+
+<p>This is a very basic HTML file. If you open it in a web browser you should see the following: </p>
+
+<div class="raw">
+    <h1>A heading</h1>
+    <p>Some text here</p>
+</div>
+
+<p>Enclosed in the <span>html</span> tags is all the HTML content for this page. The <span>body</span> specifies the
+    content that is visible on the webpage.</p>
+
+<p><span>h1</span> is a header, and <span>p</span> specifies a paragraph. There are many elements in HTML. The next
+    section covers some of them.</p>
+
+<h2 id="2">1.2 Page-Structure Elements</h2>
+<p>One of the most important structures in HTML are headers. As you saw in the previous example, <span>h1</span> created
+    a big header.
+    There are 6 levels of headers in HTML. They are shown below.</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;h1&gt;Heading 1&lt;/h1&gt; <br />
+        &emsp;&emsp;&lt;h2&gt;Heading 2&lt;/h2&gt; <br />
+        &emsp;&emsp;&lt;h3&gt;Heading 3&lt;/h3&gt; <br />
+        &emsp;&emsp;&lt;h4&gt;Heading 4&lt;/h4&gt; <br />
+        &emsp;&emsp;&lt;h5&gt;Heading 5&lt;/h5&gt; <br />
+        &emsp;&emsp;&lt;h6&gt;Heading 6&lt;/h6&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+<div class="raw notop">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+</div>
+
+<p>Another important HTML element is <span>div</span>, which lets you define different sections. Generally, different
+    portions of the webpage are split into different divs. The following example shows two different divs that
+    correspond to different sections. We also show one more element, <span>hr</span>, which defines a horizontal line /
+    break.</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;div&gt; <br />
+        &emsp;&emsp;&emsp;&lt;h1&gt;Section 1&lt;/h1&gt; <br />
+        &emsp;&emsp;&emsp;&lt;p&gt;This is the first section&lt;/p&gt; <br />
+        &emsp;&emsp;&lt;/div&gt; <br />
+        &emsp;&emsp;&lt;hr/&gt; <br />
+        &emsp;&emsp;&lt;div&gt; <br />
+        &emsp;&emsp;&emsp;&lt;h1&gt;Section 2&lt;/h1&gt; <br />
+        &emsp;&emsp;&emsp;&lt;p&gt;This is the second section&lt;/p&gt; <br />
+        &emsp;&emsp;&lt;/div&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+<div class="raw notop">
+    <div>
+        <h1>Section 1</h1>
+        <p>This is the first section</p>
+    </div>
+
+    <hr />
+
+    <div>
+        <h1>Section 2</h1>
+        <p>This is the second section</p>
+    </div>
+</div>
+
+<p><span>&emsp;&emsp;&lt;hr/&gt;</span> tag is an example of a single tag that doesn't enclose anything. Because of
+    this, it is closed by putting the <span>/</span> before the <span>&gt;</span>.</p>
+
+<p>HTML allows you to have lists. There are two types: ordered lists (<span>ol</span>) and unordered lists
+    (<span>ul</span>). Inside the list, you specify list items using the tag <span>li</span>.</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;ol&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;First item&lt;/li&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;Second item&lt;/li&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;Third item&lt;/li&gt; <br />
+        &emsp;&emsp;&lt;/ol&gt; <br />
+        &emsp;&emsp;&lt;ul&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;First item&lt;/li&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;Second item&lt;/li&gt; <br />
+        &emsp;&emsp;&emsp;&lt;li&gt;Third item&lt;/li&gt; <br />
+        &emsp;&emsp;&lt;/ul&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+<div class="raw notop">
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div>
+
+<h2 id="3">1.3 Input Types</h2>
+
+<p>HTML also allows having <span>input</span>. To have input, it is specified inside a <span>form</span>. You can
+    create
+    different forms for different input groups and have as many inputs in a form as you like.</p>
+
+<p>To specify the type of <span>input</span>, you must specify the property <span>type</span>. These are some examples
+    of types available in HTML. </p>
+<ul>
+    <li><span>text</span>: Allows a regular text input</li>
+    <li><span>number</span>: Only allows numbers</li>
+    <li><span>checkbox</span>: Adds a checkbox that can be checked or unchecked </li>
+    <li><span>radio</span>: Adds a radio button which only allows one selection at a time</li>
+    <li><span>date</span>: Allows specifying a date input</li>
+    <li><span>reset</span>: Button that clears the form</li>
+</ul>
+
+<p>You can also add descriptions to your inputs by wrapping the input in a <span>label</span> tag.</p>
+
+<p>Here is an example that uses all of those input types:</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;form&gt; <br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Text&lt;input type=&quot;text&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Number&lt;input type=&quot;number&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Checkbox&lt;input type=&quot;checkbox&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Radio 1&lt;input name=&quot;example&quot;
+        type=&quot;radio&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Radio 2&lt;input name=&quot;example&quot;
+        type=&quot;radio&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Date&lt;input type=&quot;date&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&emsp;&lt;label&gt;Reset&lt;input type=&quot;reset&quot;/&gt;&lt;/label&gt;<br />
+        &emsp;&emsp;&lt;/form&gt;</br>
+        &emsp;&lt;/body&gt;<br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+<div class="raw notop">
+    <form>
+        <label>Text<input type="text" /></label>
+        <label>Number<input type="number" /></label>
+        <label>Checkbox<input type="checkbox" /></label>
+        <label>Radio 1<input name="example" type="radio" /></label>
+        <label>Radio 2<input name="example" type="radio" /></label>
+        <label>Date<input type="date" /></label>
+        <label>Reset<input type="reset" /></label>
+    </form>
+</div>
+
+<p>The radio button input uses the property <span>name</span> to link the two radio buttons together. As you can see,
+    only one of them can be selected at a time, as only one value should be present.</p>
+
+<h1>Quiz 1</h1>
+<p>Complete this quiz after studying the content to test your understanding.</p>
+
+<div id="quiz" class="quiz">
+</div>
