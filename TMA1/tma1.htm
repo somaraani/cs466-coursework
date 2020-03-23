@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,7 +24,19 @@
         <h2 id="name">Somar Aani</h2>
         <h2 id="studentid">3468934</h2>
         <p class="timing"> Assignment started on <span>March 14th 2020</span>, and completed <span>March 21st
-                2020</span>. In total, it took around <span>7 hours.</span></p>
+                2020</span>. In total, it took around <span>15 hours.</span></p>
+    </div>
+
+    <div class="content">
+        <h1>Setup Instructions</h1>
+        <hr>
+        <p>For all parts of this project to run properly, it needs to be running in a server of some sort. This can be
+            achieved by running it in a local server. Please run the whole directory (TMA1) in the server. </p>
+
+        <p> If the server
+            is running on <span>localhost:8000</span>, then please open this page by going to
+            <span>localhost:8000/tma1.htm</span>, then all the links below will work properly to redirect you to the
+            correct part.</p>
     </div>
 
     <div class="content">
@@ -57,16 +68,55 @@
         <p>For this project, I had to decide on topics from Unit 1, 2 and 3 that I thought were fundamental, and figure
             out how to explain them in a way that was logical and made sense. In addition, after writing the tutorials,
             I had to come up with a quiz questions that tested the material well and showed that the user has understood
-            the content correctly. To make the quizes easily editable and make it easy to add new ones, I decided to
-            store the tests as XML files, and wrote javascript code that would automatically create the html content for
-            the test from the XML file. This makes it easy to edit existing tests or create new ones since only
+            the content correctly. </p>
+
+        <p>Each unit's content is written in a seperate file, and the project uses AJAX to quickly switch between the
+            selected unit without refreshing the whole page. The entrypoint for this project is <span>/part2/index.html</span>.</p>
+
+        <p>To make the quizes easily editable and make it easy to add new ones, I decided to
+            store the tests as XML files with the following format: </p>
+
+        <div class="code wide">
+            <p>
+                &lt;quiz&gt; <br />
+                &emsp;&lt;question&gt;<br />
+                &emsp;&emsp;&lt;description&gt;Question text here&lt;/description&gt;<br />
+                &emsp;&emsp;&lt;options&gt;<br />
+                &emsp;&emsp;&emsp;&lt;option&gt;option 1&lt;/option&gt;<br />
+                &emsp;&emsp;&emsp;&lt;option correct=&quot;true&quot;&gt;option 2&lt;/option&gt;<br />
+                &emsp;&emsp;&emsp;&lt;option&gt;option 3&lt;/option&gt;<br />
+                &emsp;&emsp;&emsp;&lt;option&gt;option 4&lt;/option&gt;<br />
+                &emsp;&emsp;&lt;/options&gt;<br />
+                &emsp;&lt;/question&gt;<br />
+                <br />
+                &emsp;&lt;question&gt;<br />
+                &emsp;&emsp;... <br /> <br />
+                &lt;/quiz&gt;<br />
+            </p>
+        </div>
+
+        <p>I then wrote javascript code that would automatically create the html content for
+            the test from the XML file, by adding a custom <span>quiz</span> tag. </p>
+
+        <div class="code wide">
+            <p>
+                &lt;quiz name="unitname" /&gt; <br />
+            </p>
+        </div>
+
+
+        <p> The <span>name</span> attribute defines the name of the quiz. For example, the code above would look for a
+            file called <span>unitname.xml</span> and create a quiz from it. This makes it easy to edit existing
+            tests or create new ones since only
             the XML files need to be modified. </p>
 
-        <p>All material for the lessons was adapted from the official course textbook: </p>
+        <p>All material for the lessons was adapted from the textbook: <br /><a
+                href="https://deitel.com/internet-and-world-wide-web-how-to-program-5-e/" target="_blank">'Internet &
+                World Wide Web: HOW TO PROGRAM' - fifth edition by Paul, Harvey & Abbey Deitel.</a></p>
 
         <p>I named my web based system: EzWebDev and it can be accessed by clicking on the button below. </p>
 
-        <button>Open EzWebDev</button>
+        <a href="/part2/index.html"><button>Open EzWebDev</button></a>
     </div>
 
 

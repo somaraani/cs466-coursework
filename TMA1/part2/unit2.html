@@ -1,0 +1,157 @@
+<h1>Unit 2 - Scripting in Javascript </h1>
+<p>This unit will introduce you to scripting in Javascript. Javascript runs client side in the browser. By using
+    javascript we can add extra functionality and logic to a website or web applicaiton. </p>
+
+<h2 id="1">2.1 Introduction</h2>
+<p>To add javascript code to our website, we must add it in the <span>header</span> section using the
+    <span>script</span> tag.</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;head&gt; <br />
+        &emsp;&emsp;&lt;title&gt;Website title&lt;/title&gt; <br />
+        &emsp;&emsp;&lt;script type="text/javascript"&gt; <br />
+        &emsp;&emsp;&emsp;document.writeln("&lt;h1&gt;Javascript works!&lt;/h1&gt;")<br />
+        &emsp;&emsp;&lt;/script&gt; <br />
+        &emsp;&lt;/head&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+
+<p>The <span>type</span> attribute tells the browser that our script is javascript text.</p>
+
+<p>The <span>document</span> object represents the currently displayed html page in the browser. The
+    <span>writeln</span> method on the <span>document</span> object writes a new line. Inside the method we pass a
+    string argument which is the html code to add. </p>
+
+<p>The above code results in the following webpage: </p>
+
+<div class="raw">
+    <h1>Javascript works!</h1>
+    <br /><br />
+</div>
+
+<p>Since all our script does is add a header to our HTML document, this is the same as having that header in the body.
+    That isn't a very useful script, so lets try to add some more functionality to it.</p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;head&gt; <br />
+        &emsp;&emsp;&lt;title&gt;Website title&lt;/title&gt; <br />
+        &emsp;&emsp;&lt;script type="text/javascript"&gt; <br />
+        &emsp;&emsp;&emsp;today = new Date()<br />
+        &emsp;&emsp;&emsp;document.writeln("&lt;h1&gt;The date is ")<br />
+        &emsp;&emsp;&emsp;document.write(today + "&lt;/h1&gt;")<br />
+        &emsp;&emsp;&lt;/script&gt; <br />
+        &emsp;&lt;/head&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+
+<p>This script will display the current date. </p>
+
+<p>Javascript has a <span>Date</span> object. An object is a type that has a state and properties (fields). To create a
+    new object in Javascript, you use the keyword <span>new</span>. For example, to create a date we use <span>new
+        Date()</span>, which creates a date object with todays date.</p>
+
+<p>The <span>write</span> method on <span>document</span> will write content without adding a new line, where as
+    <span>writeln</span> will add a new line after it adds the content. </p>
+
+<p>You can test this out by yourself. Copy the contents in the example into a <span>.html</span> file, and run it in
+    your web browser.</p>
+
+<p>While you can put Javascript code in your HTML file using the
+    <script>script</script> tag, this is not recommended. The better way is to have your javascript code in a seperate
+    file, and reference it in your HTML document. </p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;head&gt; <br />
+        &emsp;&emsp;&lt;title&gt;Website title&lt;/title&gt; <br />
+        &emsp;&emsp;&lt;script type="text/javascript" src="script.js" &gt; <br />
+        &emsp;&emsp;&lt;/script&gt; <br />
+        &emsp;&lt;/head&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+
+<p>The <span>src</span> attribute stands for "source" and will point towards an external file that contains your
+    javascript code. Generally javascript files have the extention <span>.js</span></p>
+
+<h2 id="2">2.2 Functions</h2>
+
+<p>Javascript allows you to define functions. Functions are blocks of code that can have a return value, and that you
+    can run when you like. The following example will demonstrate a basic usage of a function. </p>
+
+<div class="code">
+    <p>
+        &lt;!DOCTYPE html&gt; <br />
+        &lt;html&gt; <br />
+        &emsp;&lt;head&gt; <br />
+        &emsp;&emsp;&lt;title&gt;Website title&lt;/title&gt; <br />
+        &emsp;&emsp;&lt;script type="text/javascript"&gt; <br />
+        &emsp;&emsp;&emsp;function test() {<br />
+        &emsp;&emsp;&emsp;&emsp;alert("Inside the function!")<br />
+        &emsp;&emsp;&emsp;}<br />
+        &emsp;&emsp;&lt;/script&gt; <br />
+        &emsp;&lt;/head&gt; <br />
+        &emsp;&lt;body&gt; <br />
+        &emsp;&emsp;&lt;button onclick="test()"&gt;Click Me!&lt;/button&gt;<br />
+        &emsp;&lt;/body&gt; <br />
+        &lt;/html&gt; <br />
+    </p>
+</div>
+<div class="raw notop">
+    <button onclick='alert("Inside the function!")'>Click Me!</button>
+    <br /> <br />
+</div>
+
+<p>The <span>onclick</span> attribute for a button allows you to specify Javascript code to run when the button is
+    clicked. Here I set it to run the function <span>test</span>. The <span>alert</span> function in Javascript will
+    create an alert in your
+    browser.</p>
+
+
+<h2 id="3">2.3 Events </h2>
+
+<p>Sometimes we want things to happen automatically without user input. We can achieve this using events. Events are
+    responses to things happening in your HTML page. For example, Javascript has a <span>load</span> event. The
+    <span>load</span> event is fired whenever the HTML object is fully loaded. We can use this to automatically run
+    certain functions or scripts when the page loads. </p>
+
+<div class="code">
+    <p>
+        function test() {<br />
+        &emsp;alert("This will run automatically!")<br />
+        }<br />
+        <br />
+        window.addEventListener("load", test, false)
+    </p>
+</div>
+
+<p>In that example, we add an <span>eventListener</span> to the <span>window</span> object. The window object contains
+    everything in the current web page. An <span>eventListener</span> will "listen" to check if the event we specified
+    has happened. In this case, we specify the <span>load</span> event. We also specify to run the <span>test</span>
+    function when the event fires. The last argument will always be false and is beyond the scope of this course.
+</p>
+
+<p>There are many events available in Javascript. For example, there is the <span>mouseover</span> event which
+fires whenever the cursor enters a certain element. There is also <span>onkeypress</span> event which happens
+when a user clicks a key on their keyboard. you can view a list of events <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">here</a>.</p>
+
+<h1>Quiz 2</h1>
+<p>Complete this quiz after studying the content to test your understanding.</p>
+
+<quiz name="unit2" id="quiz"/>

@@ -28,6 +28,10 @@ hr {
     margin-bottom: 2em;
 }
 
+a {
+    color: #F9AA33;
+}
+
 span {
     color: #d6d6d6;
     font-family: "Courier New", Courier, monospace;
@@ -36,6 +40,10 @@ span {
 .content {
     width: 80%;
     margin: 0 auto;
+}
+
+.orange {
+    color: #F9AA33;
 }
 
 /* --------- NAV BAR --------- */
@@ -107,7 +115,7 @@ button {
     background-color: #F9AA33 !important;
 }
 
-.sidenav ul {
+.sidenav li {
     list-style-type: none;
 }
 
@@ -193,6 +201,12 @@ button {
     font-family: "Courier New", Courier, monospace;
 }
 
+.wide {
+    width: 45em;
+    margin-bottom: 1.5em;
+    padding-left: 2.5em;
+}
+
 /* --------- RAW --------- */
 
 .raw {
@@ -234,17 +248,27 @@ button {
 
 /* --------- QUIZ --------- */
 
-.quiz label {
+quiz label {
     display: block;
 }
 
-.quiz h1 {
+quiz h1 {
     color: white;
     font-size: 1.2em;
 }
 
-.quiz .submit {
+quiz button {
     margin-top: 2em;
     padding: 0.5em;
     font-size: 1em;
 }
+
+quiz .right {
+    color: green;
+}
+
+quiz .wrong {
+    color: red;
+}
+
+

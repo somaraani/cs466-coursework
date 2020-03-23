@@ -1,0 +1,42 @@
+<quiz>
+    <question>
+        <description>Where is the best place to put your Javascript code?</description>
+        <options>
+            <option>Inside the body tag</option>
+            <option>Inside a script tag in the header</option>
+            <option correct="true">In a seperate file</option>
+            <option>Inside a buttons onclick attribtue</option>
+        </options>
+    </question>
+
+    <question>
+        <description>Which of the following methods adds code to the document without inserting a new line?</description>
+        <options>
+            <option>document.println(code)</option>
+            <option correct="true">document.write(code)</option>
+            <option>document.writeln(code)</option>
+            <option>document.add(code)</option>
+        </options>
+    </question>
+
+    <question>
+        <description>Which file extention is usually used for Javascript files?</description>
+        <options>
+            <option>.javascript</option>
+            <option correct="true">.js</option>
+            <option>.script</option>
+            <option>.sc</option>
+        </options>
+    </question>
+
+    <question>
+        <description>Which of the following events is fired when the object is loaded?</description>
+        <options>
+            <option correct="true">"load"</option>
+            <option>"onload"</option>
+            <option>"loaded"</option>
+            <option>"hasloaded"</option>
+        </options>
+    </question>
+
+</quiz>
