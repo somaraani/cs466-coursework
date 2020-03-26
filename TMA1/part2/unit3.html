@@ -1,0 +1,82 @@
+<h1>Unit 3 - XML & AJAX </h1>
+
+<p>This unit will introduce you to XML & AJAX. Those technologies can help make your web applications more modular and
+    externalize some of your data. </p>
+
+<h2 id="1">3.1 XML</h2>
+
+<p>XML or extensible markup language is a format that allows you to format data in a way that is easy for both a human
+    and a machine to read. XML is great for storing data that is sent accross web applications or to make easily
+    editable forms. For example, the quizes that you see at the end of each unit are stored as XML files. This makes it
+    easy to add new tests or modify existing ones, since all you need to do is modify the XML file, and the Javascript
+    code will build the quiz from the updated XML file.</p>
+
+<p>Here is what the quizes look like </p>
+
+<div class="code">
+    <p>
+        &lt;quiz&gt; <br />
+        &emsp;&lt;question&gt;<br />
+        &emsp;&emsp;&lt;description&gt;Question text here&lt;/description&gt;<br />
+        &emsp;&emsp;&lt;options&gt;<br />
+        &emsp;&emsp;&emsp;&lt;option&gt;option 1&lt;/option&gt;<br />
+        &emsp;&emsp;&emsp;&lt;option correct=&quot;true&quot;&gt;option 2&lt;/option&gt;<br />
+        &emsp;&emsp;&emsp;&lt;option&gt;option 3&lt;/option&gt;<br />
+        &emsp;&emsp;&emsp;&lt;option&gt;option 4&lt;/option&gt;<br />
+        &emsp;&emsp;&lt;/options&gt;<br />
+        &emsp;&lt;/question&gt;<br />
+        <br />
+        &emsp;&lt;question&gt;<br />
+        &emsp;&emsp;... <br /> <br />
+        &lt;/quiz&gt;<br />
+    </p>
+</div>
+
+<p>Much like the HTML code you have learned so far, XML uses tags and attributes to format its data. </p> An XML file
+must have only one root (top level) tag. In this case,
+our root tag is <span>quiz</span>. In our options, we use the attribute <span>correct=true</span> to define the correct
+answer, and
+our code looks for that when creating it. You can format your data however you like, as long as it's consistent and
+logical. </p>
+
+<p>You can create XML Schemas. These define rules and constraints for your XML data. For example, we can create a schema
+    for the quiz that forces us to have at least one question in the quiz, and also confirms that the quiz has valid
+    description, the options section, and at least one question that is correct. You can use a XML Validators such as <a
+        target="_blank" href="https://www.freeformatter.com/xml-validator-xsd.html">this one</a>, that tell you if a
+    certain XML file is
+    valid and complete against your schema. You can learn more about schemas <a target="_blank"
+        href="https://www.w3schools.com/xml/schema_intro.asp">here.</a></p>
+
+<h2 id="2">3.2 AJAX</h2>
+
+<p>Ajax, or 'Asynchronous Javascript and XML' is a method for asynchronously downloading data in your web applications.
+    This allows you to download data and use it to modify your webpage without needing to refresh it. For example, this
+    web application uses AJAX technology to load the different units. When you select one of the units in the left hand
+    side, it calls a method which loads the content for the selected unit from a seperate HTML file, for example
+    <span>unit3.html</span> and displays its
+    content. </p>
+
+<div class="code">
+    <p>
+        var request = new XMLHttpRequest() <br />
+        request.onreadystatechange = function () { <br />
+        &emsp;if (request.readyState == 4 && request.status == 200) { <br />
+        &emsp;&emsp;alert(request.responseText) <br />
+        &emsp;} <br />
+        } <br />
+        request.open("GET", "yourfile.txt", true) <br />
+        request.send()
+    </p>
+</div>
+
+<p> This code first creates a new <span>XMLHttpRequest</span> object, which is what allows us to download the files.
+    Then we add a state changed event listener to the request object. This allows us to define what happens with the
+    data when it is downloaded. In this example, we just output the <span>responseText</span> (which is the downloaded
+    data) as an alert. The <span>open</span> function allows us to specify that we want to <span>"GET"</span> or
+    download the file. Lastly, we <span>send</span> the request we just created. </p>
+
+
+<h1>Quiz 3</h1>
+<p>Complete this quiz after studying the content to test your understanding.</p>
+
+<quiz name="unit3" id="quiz" />

@@ -1,6 +1,8 @@
 var currLink = undefined;
 var correctAnswers = [];
 
+window.addEventListener("load", display("home"), false);
+
 function display(link, obj, i) {
 
     if (currLink != link) {
@@ -64,14 +66,15 @@ function updateQuizes() {
 
             //create form
             var content = httpRequest.responseXML;
-            var questions = content.getElementsByTagName("question");
+            var questions = randomize(content.getElementsByTagName("question"));
 
             for (let index = 0; index < questions.length; index++) {
                 //add questions
                 const question = questions[index].getElementsByTagName("description")[0].firstChild.nodeValue;
                 quiz.innerHTML += `<h1>${question}</h1>`;
 
-                const answers = questions[index].getElementsByTagName("option");
+                const answers = randomize(questions[index].getElementsByTagName("option"));
+
                 for (let ans = 0; ans < answers.length; ans++) {
                     //add answers
                     const answerText = answers[ans].firstChild.nodeValue;
@@ -132,4 +135,17 @@ function submit() {
     document.getElementById("tryagainbtn").hidden = false;
 }
 
-window.addEventListener("load", display("home"), false);
+//randomizes the questions
+function randomize(answers) {
+    for (let i = answers.length - 1; i > 0; i--) {
+        //choose a random element
+        const rand = Math.floor(Math.random() * (i + 1));
+        //swap with i
+        let temp = answers[rand];
+        answers[rand] = answers[i];
+        answers[i] = temp;
+    }
+
+    return answers;
+}
+
