@@ -145,7 +145,6 @@ function randomize(answers) {
         answers[rand] = answers[i];
         answers[i] = temp;
     }
-
     return answers;
 }
 

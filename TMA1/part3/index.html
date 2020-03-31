@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div align="center" id="slideshowContainer">
+        <h1 id="title">Slideshow</h1>
+        <p id="status">Order = <span>Sequential</span> &emsp; Status = <span>Running</span></p>
+        <canvas id="slideshow" width="800" height="600">
+            Your browser does not support this slideshow. Please try with another web browser.
+        </canvas>
+        <br />
+        <p class="center" id="caption"></p>
+        <button id="orderToggle" onclick="toggleMode()">Toggle Random</button>
+        <button id="statusToggle" onclick="toggleStatus()">Stop Slideshow</button>
+        <br />
+        <button id="directionToggle" onclick="toggleDirection()">Toggle Backwards</button>
+
+    </div>
+
+</body>
+
+</html>

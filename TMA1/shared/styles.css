@@ -46,6 +46,12 @@ span {
     color: #F9AA33;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
 /* --------- NAV BAR --------- */
 
 .nav {
@@ -271,4 +277,9 @@ quiz .wrong {
     color: red;
 }
 
+/* --------- SLIDESHOW --------- */
+
+#slideshowContainer {
+    width: 800;
+}
 
