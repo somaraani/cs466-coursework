@@ -283,3 +283,11 @@ quiz .wrong {
     width: 800;
 }
 
+.inline {
+    display: inline;
+}
+
+canvas {
+    margin-top: 1em;
+}
+

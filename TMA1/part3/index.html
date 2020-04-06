@@ -11,6 +11,17 @@
     <div align="center" id="slideshowContainer">
         <h1 id="title">Slideshow</h1>
         <p id="status">Order = <span>Sequential</span> &emsp; Status = <span>Running</span></p>
+
+        <div>
+            <p class="inline">Transition Effect: </p>
+            <form class="inline" name="form">
+                <input type="radio" name="transition" value="0" checked="checked"> None </input>
+                <input type="radio" name="transition" value="1"> Fade </input>
+                <input type="radio" name="transition" value="2"> Slide </input>
+                <input type="radio" name="transition" value="3"> Expand </input>
+            </form>
+        </div>
+
         <canvas id="slideshow" width="800" height="600">
             Your browser does not support this slideshow. Please try with another web browser.
         </canvas>
@@ -20,7 +31,6 @@
         <button id="statusToggle" onclick="toggleStatus()">Stop Slideshow</button>
         <br />
         <button id="directionToggle" onclick="toggleDirection()">Toggle Backwards</button>
-
     </div>
 
 </body>
