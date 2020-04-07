@@ -1,3 +1,4 @@
+<?xml-stylesheet href='resume.xsl' type="text/xsl"?>
 <res:resume xmlns:res ="http://aani.ca/resume">
     <general>
         <name>Somar Aani</name>
@@ -9,12 +10,12 @@
         <institute>
             <name>North Toronto Collegiate Institute</name>
             <degree>Highschool Diploma</degree>
-            <graduated>2016-06-31</graduated>
+            <graduated>June 2016</graduated>
         </institute>
         <institute>
             <name>McMaster University</name>
             <degree>Bachelor of Engineering (B.Eng.)</degree>
-            <graduated>2021-04-31</graduated>
+            <graduated>May 2021</graduated>
         </institute>
     </education>
 
@@ -22,10 +23,10 @@
         <job>
             <title>Software Development Intern</title>
             <company>IBM</company>
-            <start>2019-05-01</start>
-            <end>2020-08-31</end> 
+            <start>May 2019</start>
+            <end>August 2020</end> 
             <description> Worked on a variety of applications and microservices, 
-            including both back-end (Java, Spring) and front-end (Angular) development, 
+            including both back-end (Java, Spring, Guice) and front-end (Angular) development, 
             creating and consuming RESTful APIs </description>
             <description> DevOps activities including creating Docker images and 
             deploying to Kubernetes, leveraging Spinnaker, Jenkins, Travis and Ansible 
@@ -36,8 +37,8 @@
         <job>
             <title>Mobile Development Intern</title>
             <company>Checkout51</company>
-            <start>2018-05-01</start>
-            <end>2018-08-31</end> 
+            <start>May 2018</start>
+            <end>August 2018</end> 
             <description> Developed a standalone automation utility and custom testing framework 
             from the ground-up, that is cross-platform for both iOS and Android, with an easy 
             to use GUI that allows dynamic creation of test suites. Was implemented 
@@ -51,8 +52,8 @@
         <job>
             <title>Application Programmer Analyst </title>
             <company>Ontario Ministry of Education</company>
-            <start>2017-06-01</start>
-            <end>2017-08-31</end> 
+            <start>May 2017</start>
+            <end>August 2017</end> 
             <description> Developed internal testing utilities using C# and .NET for parsing and 
             validating huge PDF reports. These were implemented into the QA process, 
             largely improving efficiency from the old manual process. </description>

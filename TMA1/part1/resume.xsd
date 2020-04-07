@@ -27,15 +27,15 @@
 
     <complexType name="InstituteType">
         <all>
-            <element name="name" type="string"/>
+            <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
             <element name="degree" type="string"/>
-            <element name="graduated" type="date"/>
+            <element name="graduated" type="string" minOccurs="1" maxOccurs="1"/>
         </all>
     </complexType>
 
     <complexType name="WorkType">
         <sequence>
-            <element name="work" type="res:JobType" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="job" type="res:JobType" minOccurs="1" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
 
@@ -43,8 +43,8 @@
         <sequence>
             <element name="title" type="string" minOccurs="1" maxOccurs="1"/>
             <element name="company" type="string" minOccurs="1" maxOccurs="1"/>
-            <element name="start" type="date" minOccurs="1" maxOccurs="1"/>
-            <element name="end" type="date" minOccurs="1" maxOccurs="1"/>
+            <element name="start" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="end" type="string" minOccurs="1" maxOccurs="1"/>
             <element name="description" type="string" minOccurs="1" maxOccurs="unbounded"/>        
         </sequence>
     </complexType>

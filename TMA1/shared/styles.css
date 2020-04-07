@@ -189,6 +189,34 @@ button {
     font-style: italic;
 }
 
+/* --------- RESUME --------- */
+
+.resume-top {
+    padding: 1em;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.resume-top h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.resume-body h1 {
+    margin: 0;
+    padding-top: 2em;
+    color: #344955;
+}
+
+.resume-body {
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 3em;
+    background-color: whitesmoke;
+    color: black;
+}
+
+
 /* --------- CODE --------- */
 
 .code {
