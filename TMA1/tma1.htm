@@ -24,7 +24,7 @@
         <h2 id="name">Somar Aani</h2>
         <h2 id="studentid">3468934</h2>
         <p class="timing"> Assignment started on <span>March 14th 2020</span>, and completed <span>March 21st
-                2020</span>. In total, it took around <span>15 hours.</span></p>
+                2020</span>. In total, it took around <span>30 hours.</span></p>
     </div>
 
     <div class="content">
@@ -56,7 +56,7 @@
         <p>To view the xml resume, click the button below. That will open up the xml document in a new tab, with the
             stylesheet applied. </p>
 
-        <button>Open XML Resume</button>
+        <a target="_blank" href="http://server:9999/part1/resume.xml"><button>Open XML Resume</button></a>
     </div>
 
     <div class="content">
@@ -71,7 +71,8 @@
             the content correctly. </p>
 
         <p>Each unit's content is written in a seperate file, and the project uses AJAX to quickly switch between the
-            selected unit without refreshing the whole page. The entrypoint for this project is <span>/part2/index.html</span>.</p>
+            selected unit without refreshing the whole page. The entrypoint for this project is
+            <span>/part2/index.html</span>.</p>
 
         <p>To make the quizes easily editable and make it easy to add new ones, I decided to
             store the tests as XML files with the following format: </p>
@@ -116,7 +117,7 @@
 
         <p>I named my web based system: EzWebDev and it can be accessed by clicking on the button below. </p>
 
-        <a href="/part2/index.html"><button>Open EzWebDev</button></a>
+        <a target="_blank" href="/part2/index.html"><button>Open EzWebDev</button></a>
     </div>
 
 
@@ -127,9 +128,9 @@
             and allows users to start/stop the auto-play feature, and also allows setting different transition effects.
         </p>
 
-        <p>The slideshow is displayed below using a frame.</p>
+        <p>The slideshow can be opened by clicking on the button below.</p>
 
-        <button>Open EzWebDev</button>
+        <a target="_blank" href="/part3/index.html"><button>Open Slideshow</button></a>
     </div>
 
     <div class="content">
@@ -138,16 +139,58 @@
         <p>For this project, we had to create a web application that has a variety of useful utility tools and
             calculators. The application will have the following 3 tools:</p>
         <ul>
-            <li>Measurements converters: weights, lengths, areas and volumes.</li>
-            <li>A mortgage calculator</li>
-            <li>A color picker *</li>
+            <li>
+                <h2>Measurements converters</h2>
+                <p>For this tool I created measurement converters for weight, length, area and volume, and used the
+                    following formulas.</p>
+                <div class="code wide">
+                    <p>1 kilogram = 2.20462 pounds</p>
+                    <p>1 meter = 3.28084 feet</p>
+                    <p>1 square meter = 10.7639 square feet</p>
+                    <p>1 cubic meter = 35.3147 cubic feet</p>
+                </div>
+            </li>
+
+            <p>These formulas were taken from the Google unit converter. You can read more about it <a
+                    href="https://support.google.com/websearch/answer/3284611?hl=en-CA#unitconverter">here.</a></p>
+
+            <li>
+                <h2>A mortgage calculator</h2>
+                <p>This tool calculates the monthly mortgage payment for a loan given the amount, interest and period.
+                    The formula I used was taken from thebalance.com, from <a
+                        href="https://www.thebalance.com/calculate-mortgage-315668">this article.</a></p>
+                <div class="code wide">
+                    <p>a = starting loan amount <br />
+                        n = number of payments <br />
+                        i = periodic interest rate </p>
+                    <p>D = {[(1 + i) ^n] - 1} / [i(1 + i)^n]</p>
+
+                    <p>monthly payments = a/D</p>
+                </div>
+            </li>
+
+            <li>
+                <h2>Color picker</h2>
+                <p>The last topic was a utility of our choosing. I decided to make a color picker that has a selector
+                    and
+                    displays the HEX and RGB values of the colors chosen. This is a very useful utility when creating
+                    stylesheets since you can find out the hex code of the color you want for your web applications and
+                    copy it
+                    directly into your style sheet, instead of being limited to the pre-defined colors. </p>
+            </li>
+
+            <p>I read <a
+                    href="https://www.developintelligence.com/blog/2017/02/rgb-to-hex-understanding-the-major-web-color-codes/">this
+                    article</a> to learn about rgb and hex color representations and how to convert between them. </p>
+            <p>I used a canvas to create the color picker using gradients. The <span>getImageData</span> function
+                allowed me to get the RGB values, then I used <span>.toString(16)</span> to convert each value to
+                hexadecimal. </p>
         </ul>
 
-        <p>* The last topic was a utility of our choosing. I decided to make a color picker that has a selector and
-            displays the HEX and RGBA values of the colors chosen. This is a very useful utility when creating
-            stylesheets since you can find out the hex code of the color you want for your web applications and copy it
-            directly into your style sheet. </p>
+        <br />
+        <p>You can view part 4 by clicking on the button below.</p>
 
+        <a target="_blank" href="/part4/index.html"><button>Open Utility Tool</button></a>
     </div>
 
 

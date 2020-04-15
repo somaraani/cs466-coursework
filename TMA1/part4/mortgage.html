@@ -1,2 +1,26 @@
 <h1>Mortgage Calculator</h1>
 <p>This tool will help you calculate your mortgage!</p>
+
+<label>
+    <p>Loan amount ($)</p>
+    <input id = "amount" oninput="calculateMortgage()" step="any">
+</input>
+</label>
+
+<label>
+    <p>Interest (%)</p>
+    <input id = "interest" oninput="calculateMortgage()" step="any">
+</input>
+</label>
+
+
+<label>
+    <p>Payment period (years)</p>
+    <input id = "period" oninput="calculateMortgage()" step="any">
+</input>
+</label>
+
+<br />
+<br />
+
+<p>Your monthly mortgage payment will be: <span id="payment"></span></p>

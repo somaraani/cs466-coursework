@@ -73,6 +73,7 @@ span {
 .nav li {
     display: inline;
     margin-right: 3em;
+    cursor: pointer;
 }
 
 .nav a {
@@ -119,6 +120,10 @@ button {
 
 .sidenav .selected a:hover {
     background-color: #F9AA33 !important;
+}
+
+.sidenav ul {
+    padding-inline-start: 0;
 }
 
 .sidenav li {
@@ -319,3 +324,45 @@ canvas {
     margin-top: 1em;
 }
 
+/* --------- Utility --------- */
+
+#tool-content h1 {
+    padding-top: 3em;
+    margin-top: 0;
+}
+
+#tool-content h2 {
+    margin-top: 1em;
+    margin-bottom: 0em;
+}
+
+#tool-content label {
+    padding-left: 2em;
+}
+
+
+#tool-content input {
+    width: 30em;
+}
+
+table {
+    margin-top: 1em;
+    margin-left: 5em;
+}
+
+th, td {
+    padding-left: 3em;
+}
+
+#color {
+    display:inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: red;
+}
+
+#payment {
+    color: #F9AA33;
+    size: 2em;
+    font-weight: 600;
+}
