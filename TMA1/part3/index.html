@@ -13,12 +13,14 @@
         <p id="status">Order = <span>Sequential</span> &emsp; Status = <span>Running</span></p>
 
         <div>
-            <p class="inline">Transition Effect: </p>
             <form class="inline" name="form">
-                <input type="radio" name="transition" value="0" checked="checked"> None </input>
-                <input type="radio" name="transition" value="1"> Fade </input>
-                <input type="radio" name="transition" value="2"> Slide </input>
-                <input type="radio" name="transition" value="3"> Expand </input>
+                <label for="cars">Transition Effect: </label>
+                <select id="transition" name="transition">
+                    <option value="0">None</option>
+                    <option value="1">Fade</option>
+                    <option value="2">Slide</option>
+                    <option value="3">Expand</option>
+                </select>
             </form>
         </div>
 
@@ -28,9 +30,11 @@
         <br />
         <p class="center" id="caption"></p>
         <button id="orderToggle" onclick="toggleMode()">Toggle Random</button>
+        <button id="directionToggle" onclick="toggleDirection()">Toggle Backwards</button>
         <button id="statusToggle" onclick="toggleStatus()">Stop Slideshow</button>
         <br />
-        <button id="directionToggle" onclick="toggleDirection()">Toggle Backwards</button>
+        <button id="backward" onclick="back()">Back</button>
+        <button id="forward" onclick="next()">Next</button>
     </div>
 
 </body>

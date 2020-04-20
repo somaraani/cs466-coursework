@@ -1,28 +1,125 @@
 var images = [{
     path: "img1.jpg",
-    caption: "The first caption"
+    caption: "Buildings in New York"
 },
 {
-    path: "img2.jpeg",
-    caption: "The second caption"
-}];
+    path: "img2.jpg",
+    caption: "A cemetary in Hamilton, Ontario"
+},
+{
+    path: "img3.jpg",
+    caption: "An Easton hockey stick"
+},
+{
+    path: "img4.jpg",
+    caption: "A beach in Vancouver"
+},
+{
+    path: "img5.jpg",
+    caption: "Park near my house"
+},
+{
+    path: "img6.jpg",
+    caption: "A building in New York"
+},
+{
+    path: "img7.jpg",
+    caption: "Downtown Toronto"
+},
+{
+    path: "img8.jpg",
+    caption: "A university in New York"
+},
+{
+    path: "img9.jpg",
+    caption: "A house with colored lamps"
+},
+{
+    path: "img10.jpg",
+    caption: "A big rock in Vancouver"
+},
+{
+    path: "img11.jpg",
+    caption: "My dog casper"
+},
+{
+    path: "img12.jpg",
+    caption: "Toronto lakeshore"
+},
+{
+    path: "img13.jpg",
+    caption: "Pianos in my university residence"
+},
+{
+    path: "img14.jpg",
+    caption: "Fields with white fence"
+},
+{
+    path: "img15.jpg",
+    caption: "Computer setup"
+},
+{
+    path: "img16.jpg",
+    caption: "Playground near my house"
+},
+{
+    path: "img17.jpg",
+    caption: "Two darts hit at the same exact spot"
+},
+{
+    path: "img18.jpg",
+    caption: "Lamp near my house"
+},
+{
+    path: "img19.jpg",
+    caption: "Trails in Hamilton"
+},
+{
+    path: "img20.jpg",
+    caption: "A TTC Bus"
+}
+];
 
 const TIMEOUT = 3000;
-var slideIndex = 0;
+var slideIndex = -1;
 
 var random = false;
 var running = true;
-var forward = true;
 
 var transition = 0;
+var forward = true;
 
-function displaySlide() {
-    setTimeout(() => {
-        displaySlide()
-    }, TIMEOUT);
+var cancelled = false;
 
-    if (!running) {
-        return;
+function displaySlide(manual, index) {
+    if (!manual) {
+        setTimeout(() => {
+            displaySlide(false)
+        }, TIMEOUT);
+
+
+        if (!running) {
+            return;
+        }
+
+        if (cancelled) {
+            cancelled = false;
+            return;
+        }
+    }
+
+    if (manual) {
+        cancelled = true;
+    }
+
+    if (index != undefined) {
+        slideIndex = index;
+    } else if (random) {
+        slideIndex = Math.floor(Math.random() * (images.length));
+    } else if (forward) {
+        slideIndex++;
+    } else {
+        slideIndex--;
     }
 
     if (slideIndex >= images.length) {
@@ -37,6 +134,10 @@ function displaySlide() {
 
     const imageObject = new Image();
     imageObject.src = "imgs/" + images[slideIndex].path;
+
+    var transitions = document.getElementById("transition");
+    transition = transitions.options[transitions.selectedIndex].value;
+
     imageObject.onload = function () {
 
         if (transition == 1) {
@@ -46,20 +147,21 @@ function displaySlide() {
         } else if (transition == 3) {
             slideTop(canvas, imageObject);
         } else {
-            canvas.drawImage(imageObject, 0, 0);
+            canvas.drawImage(imageObject, 0, 0, 800, 600);
         }
 
         document.getElementById("caption").innerText = (slideIndex + 1) + ". " + images[slideIndex].caption;
-
-        if (random) {
-            slideIndex = Math.floor(Math.random() * (images.length));
-        } else if (forward) {
-            slideIndex++;
-        } else {
-            slideIndex--;
-        }
     }
 }
+
+function next() {
+    displaySlide(true, slideIndex + 1);
+}
+
+function back() {
+    displaySlide(true, slideIndex - 1);
+}
+
 
 function fadeIn(canvas, imageObject) {
     var alpha = 0;
@@ -67,7 +169,7 @@ function fadeIn(canvas, imageObject) {
         alpha += 0.002;
 
         canvas.globalAlpha = alpha;
-        canvas.drawImage(imageObject, 0, 0);
+        canvas.drawImage(imageObject, 0, 0, 800, 600);
 
         if (alpha < 0.5) {
             requestAnimationFrame(animation);
@@ -82,7 +184,7 @@ function slideIn(canvas, imageObject) {
     (function animation() {
         x -= 10;
 
-        canvas.drawImage(imageObject, x, 0);
+        canvas.drawImage(imageObject, x, 0, 800, 600);
 
         if (x > 0) {
             requestAnimationFrame(animation);
@@ -111,12 +213,27 @@ function toggleMode() {
     if (random) {
         slideIndex = Math.floor(Math.random() * (images.length));
         document.getElementById("orderToggle").innerText = "Toggle Sequential";
+        document.getElementById("forward").disabled = true;
+        document.getElementById("backward").disabled = true;
         document.getElementById("directionToggle").disabled = true;
     } else {
-        document.getElementById("directionToggle").disabled = false;
         document.getElementById("orderToggle").innerText = "Toggle Random";
+        document.getElementById("directionToggle").disabled = false;
+        document.getElementById("forward").disabled = false;
+        document.getElementById("backward").disabled = false;
     }
 
+}
+
+function toggleDirection() {
+    forward = !forward;
+    updateStatus();
+
+    if (forward) {
+        document.getElementById("directionToggle").innerText = "Toggle Backwards";
+    } else {
+        document.getElementById("directionToggle").innerText = "Toggle Forwards";
+    }
 }
 
 function toggleStatus() {
@@ -142,27 +259,7 @@ function updateStatus() {
     document.getElementById('status').innerHTML = `<p>Order = <span>${order}</span> &emsp; Status = <span>${status}</span></p>`
 }
 
-function toggleDirection() {
-    forward = !forward;
-    updateStatus();
-
-    if (forward) {
-        document.getElementById("directionToggle").innerText = "Toggle Backwards";
-    } else {
-        document.getElementById("directionToggle").innerText = "Toggle Forwards";
-    }
-}
-
-
 window.onload = function () {
     updateStatus();
     displaySlide();
-
-    //register event handler for all transition buttons
-    var radioBtns = document.form.transition;
-    for (let i = 0; i < radioBtns.length; i++) {
-        radioBtns[i].addEventListener('change', function () {
-            transition = this.value;
-        })
-    }
 }

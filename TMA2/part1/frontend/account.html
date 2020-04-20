@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../shared/style.css">
+    <script src="script.js"></script> 
+</head>
+
+<body>
+
+    <div id="dimmer" class="dim">  
+    </div>
+
+    <div class="header">
+        <h1>BookMarks</h1>
+        <p>logout</p>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <form>
+            <label>
+                <p>Bookmark name</p>
+                <input type="text" name="username" />
+            </label>
+            <br />
+            <label>
+                <p>Bookmark URL</p>
+                <input type="password" name="password" />
+            </label>
+            <br />
+            <br />
+            <p id="error"></p>
+            <input type="submit" value="Save" />
+            <p></p>
+        </form>
+        <button onclick="hideOverlay()"> Cancel </button>
+    </div>
+
+    <div class="content">
+
+        <h2 id="create" onclick="create()"> + create new bookmark</h2>
+        <br />
+
+        <div class="bookmark-container">
+            <div class="bookmark">
+                <h1>Google</h1>
+                <p>edit</p>
+                <p>remove</p>
+            </div>
+    
+            <div class="bookmark">
+                <h1>Facebook</h1>
+                <p>edit</p>
+                <p>remove</p>
+            </div>
+    
+        </div>
+        
+        
+    </div>
+   
+
+</body>
+
+</html>

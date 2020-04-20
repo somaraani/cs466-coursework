@@ -1,0 +1,103 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding-top: 20px;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: royalblue;
+}
+
+.header h1 {
+    padding: 20px;
+    padding-left: 40px;
+    color: white;
+    display: inline;
+}
+
+.header p {
+    display: inline;
+    color: white;
+    position: fixed;
+    top: 5px;
+    right: 100px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.content {
+    padding-left: 40px;
+}
+
+h1, h2 {
+    color: royalblue;
+}
+
+label p {
+    color: royalblue;
+}
+
+table {
+    margin-top: 50px;
+    text-align: left;
+    width: 40em;
+}
+
+.bookmark-container {
+    display:flex;
+    flex-direction:row;
+}
+
+.bookmark {
+    min-width: 350px;
+    height: 150px;
+    background-color: royalblue;
+    margin-right: 50px;
+}
+
+.bookmark h1 {
+    padding-left: 20px;
+    color: white;
+}
+
+.bookmark p {
+    padding-left: 20px;
+}
+
+.dim {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 8000;
+    opacity: 50%;
+}
+
+.overlay {
+    position: static;
+    width: 500px;
+    height: 300px;
+    z-index: 9999;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -250px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.overlay input, button {
+    width: 475px;
+}
+
+#create {
+    cursor: pointer;
+}
