@@ -18,15 +18,17 @@ html, body {
     display: inline;
 }
 
-.header p {
+.right {
     display: inline;
     color: white;
     position: fixed;
-    top: 5px;
-    right: 100px;
-    text-decoration: underline;
-    cursor: pointer;
+    top: 15px;
+    right: 50px;
     font-size: 1.3em;
+}
+
+.right p, form {
+    margin: 0;
 }
 
 .content {
@@ -47,21 +49,38 @@ table {
     width: 40em;
 }
 
-.bookmark-container {
-    display:flex;
-    flex-direction:row;
+.bookmark-container>div {
+    float: left;
+}
+
+.bookmark-button {
+    margin-top: 35px;
 }
 
 .bookmark {
+    margin-bottom: 35px;
     min-width: 350px;
-    height: 150px;
+    max-width: 790px;
+    height: 175px;
     background-color: royalblue;
     margin-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bookmark a {
+    text-decoration: none;
+}
+
+.bookmark button, .bookmark form, .bookmark input {
+    margin:0 auto;
+    display:block;
+    width: 200px;
 }
 
 .bookmark h1 {
-    padding-left: 20px;
     color: white;
+    font-size: 1.5em;
 }
 
 .bookmark p {
@@ -82,20 +101,24 @@ table {
 .overlay {
     position: static;
     width: 500px;
-    height: 300px;
+    height: 275px;
     z-index: 9999;
     position: fixed; 
     top: 50%;
     left: 50%;
-    margin-top: -150px;
+    margin-top: -200px;
     margin-left: -250px;
     padding: 20px;
     background-color: white;
     border: 1px solid black;
 }
 
-.overlay input, button {
+.overlay input, .overlay button {
     width: 475px;
+}
+
+.error {
+    color: red;
 }
 
 #create {
