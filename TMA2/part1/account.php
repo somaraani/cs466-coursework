@@ -27,7 +27,6 @@
         global $database;
         $statement = "DELETE FROM Bookmarks where id=$id";
         $database->query($statement);
-        console_log($statement);
         getBookmarks();
     }
 
@@ -79,7 +78,7 @@
     </div>
 
     <div class="header">
-        <h1>BookMarks</h1>
+        <h1 class="padded">BookMarks</h1>
         <div class="right">
         <p><?php print $_SESSION['username']?></p>
         <form method="post">

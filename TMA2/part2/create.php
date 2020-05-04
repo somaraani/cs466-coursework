@@ -24,10 +24,11 @@
 
         //if no errors create 
         if($error == "") {
-            $statement = "INSERT INTO Users(username, password) VALUES('$username', '$password')";
+            $statement = "INSERT INTO Users(username, password, lesson) VALUES('$username', '$password', '1')";
 
             if($database->query($statement) === true) {
-                $_SESSION['username'] = $username; 
+                $_SESSION['user'] = $username;
+                $_SESSION['lesson'] = 1;
                 header("location: index.php");
             }
         }
@@ -38,35 +39,40 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../../shared/style.css">
+    <link rel="stylesheet" type="text/css" href="../shared/style.css">
 </head>
 
 <body>
-    <div class="header">
-        <h1>BookMarks</h1>
+    <div class="header orange-back">
+        <div class="padded-content">
+            <h1>EduK8</h1>
+        </div>
     </div>
 
-    <div class="content">
-        <p>Create your account to start saving bookmarks!</p>
+
+    <div class="padded-content"">
+        <br />
+        <p>Create your account to start learning!</p>
+        <br />
         <div class="login">
             <form method = "post" action="create.php">
                 <label>
-                    <p>Username (must be at least 6 characters) </p>
-                    <input type="text" name="username" value="<?php print("$username"); ?>" required >
+                    <p class="orange">Username (must be at least 6 characters) </p>
+                    <input style="width: 500px;" type="text" name="username" value="<?php print("$username"); ?>" required >
                 </label>
                 <br />
                 <label>
-                    <p>Password (8 characters or longer)</p>
-                    <input type="password" name="password" required>
+                    <p class="orange">Password (8 characters or longer)</p>
+                    <input style="width: 500px;" type="password" name="password" required>
                 </label>
                 <label>
-                    <p>Repeat Password</p>
-                    <input type="password" name="repeated" required>
+                    <p class="orange">Repeat Password</p>
+                    <input style="width: 500px;" type="password" name="repeated" required>
                 </label>
                 <br />
                 <br />
                 <p class=error><?php print("$error")?></p>
-                <input type="submit" value="Sign up" />
+                <input class="orange-btn" type="submit" value="Sign up" />
             </form>
             <br />
             <a href="index.php"><p>Already have an account? Log in instead.</p></a>

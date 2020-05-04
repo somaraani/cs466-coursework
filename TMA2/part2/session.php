@@ -10,5 +10,5 @@
         echo '</script>';
     }
 
-    $database = mysqli_connect("localhost", "root", "", "bookmarks");
+    $database = mysqli_connect("localhost", "root", "", "lms");
 ?>

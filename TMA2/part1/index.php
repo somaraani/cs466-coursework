@@ -39,7 +39,7 @@
 <body>
 
     <div class="header">
-        <h1>BookMarks</h1>
+        <h1 class="padded">BookMarks</h1>
     </div>
 
     <div class="content">
@@ -74,6 +74,7 @@
             <?php endforeach ?>
 
         </ol>
+
     </div>
    
 
