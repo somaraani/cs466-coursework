@@ -9,15 +9,9 @@
         $username = $_SESSION['user'];
     }
 
-    function logout() {
-        session_destroy();
-        header("location: index.php");
-    }
-
     if(array_key_exists('logout', $_POST)) {
         logout();
     }
-
 
     $id = $_GET['id'];
 
@@ -92,6 +86,10 @@
 
     <div class="eduk8 padded-content">        
         <?php print $content ?>
+        <br />
+        <h2>Lesson <?php print $lesson['id'] ?> Quiz</h2>
+        <p>Finish quiz <?php print $lesson['id'] ?> to complete the lesson and unlock the next one. You must get all the questions correct to pass.</p>
+        <a href="quiz.php?id=<?php print $lesson['quiz'] ?>"><button class="orange-btn">Start Quiz</button></a>
     </div>
    
 

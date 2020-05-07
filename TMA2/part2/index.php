@@ -4,7 +4,7 @@
     $username = "";
     $error = "";
 
-    if(isset($_SESSION['user'])) {
+    if(isset($_SESSION['user']) && isset($_SESSION['lesson'])) {
         header("location: account.php");
     }
 

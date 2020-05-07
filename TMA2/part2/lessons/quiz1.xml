@@ -1,0 +1,112 @@
+<quiz>
+    <question>
+        <description>
+            Which of the following tags does all your html code go in?
+        </description>
+        <options>
+            <option>body</option>
+            <option correct="true">html</option>
+            <option>code</option>
+            <option>web</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            Which is the biggest heading tag you can have in HTML?
+        </description>
+        <options>
+            <option>p</option>
+            <option>h6</option>
+            <option correct="true">h1</option>
+            <option>h0</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            Which of the following tags denotes a list that has an order?
+        </description>
+        <options>
+            <option correct="true">ol</option>
+            <option>list</option>
+            <option>ul</option>
+            <option>ordered</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            How do you link two radio inputs together such that only one can be selected at a time?
+        </description>
+        <options>
+            <option>Place both options in the same 'input' tag</option>
+            <option>Put them right after each other</option>
+            <option correct="true">Set the same name attribute</option>
+            <option>Place both in the same 'label' tag</option>
+        </options>
+    </question>
+    <question>
+        <description>What does the 'div' tag denote?</description>
+        <options>
+            <option>A horizontal divider</option>
+            <option correct="true">A related section in the website</option>
+            <option>The end of a paragraph</option>
+            <option>A page in the website</option>
+        </options>
+    </question>
+</quiz>
+
+INSERT INTO Quizes
+VALUES (1, "<quiz>
+    <question>
+        <description>
+            Which of the following tags does all your html code go in?
+        </description>
+        <options>
+            <option>body</option>
+            <option correct='true'>html</option>
+            <option>code</option>
+            <option>web</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            Which is the biggest heading tag you can have in HTML?
+        </description>
+        <options>
+            <option>p</option>
+            <option>h6</option>
+            <option correct='true'>h1</option>
+            <option>h0</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            Which of the following tags denotes a list that has an order?
+        </description>
+        <options>
+            <option correct='true'>ol</option>
+            <option>list</option>
+            <option>ul</option>
+            <option>ordered</option>
+        </options>
+    </question>
+    <question>
+        <description>
+            How do you link two radio inputs together such that only one can be selected at a time?
+        </description>
+        <options>
+            <option>Place both options in the same 'input' tag</option>
+            <option>Put them right after each other</option>
+            <option correct='true'>Set the same name attribute</option>
+            <option>Place both in the same 'label' tag</option>
+        </options>
+    </question>
+    <question>
+        <description>What does the 'div' tag denote?</description>
+        <options>
+            <option>A horizontal divider</option>
+            <option correct='true'>A related section in the website</option>
+            <option>The end of a paragraph</option>
+            <option>A page in the website</option>
+        </options>
+    </question>
+</quiz>"); 

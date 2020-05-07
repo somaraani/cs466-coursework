@@ -9,11 +9,6 @@
         $username = $_SESSION['user'];
     }
 
-    function logout() {
-        session_destroy();
-        header("location: index.php");
-    }
-
     if(array_key_exists('logout', $_POST)) {
         logout();
     }

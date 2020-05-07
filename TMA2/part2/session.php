@@ -10,5 +10,10 @@
         echo '</script>';
     }
 
+    function logout() {
+      session_destroy();
+      header("location: index.php");
+  }
+
     $database = mysqli_connect("localhost", "root", "", "lms");
 ?>
