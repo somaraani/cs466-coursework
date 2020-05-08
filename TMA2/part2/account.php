@@ -16,7 +16,6 @@
     //get all lessons 
     $statement = "SELECT * FROM Lessons";
     $lessons = $database->query($statement)->fetch_all();
-    
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +54,10 @@
                 <a href='lesson.php?id=<?php echo $lesson[0] ?>'>
                     <div class="lesson">
                         <h2><?php echo $lesson[0] . ". " . $lesson[1] ?></h2>
-                        <p class="status">available</p>
+                        <div>
+                            <a href="quiz.php?id=<?php echo $lesson[0] ?>"><button class="quiz-btn status">Quiz</button></a>
+                            <p class="status">available</p>
+                        </div>
                     </div>
                 </a>
             <?php elseif($_SESSION['lesson'] > $lesson[0]) : ?>
@@ -76,10 +78,14 @@
 
         <?php endforeach ?>
 
+        <br />
+
+        <?php if($_SESSION['lesson'] >= count($lessons)) : ?>
+            <p><b>You have completed all currently available lessons. Nice job! </b></p>
+        <?php endif ; ?>
         
     </div>
    
-
 </body>
 
 </html>

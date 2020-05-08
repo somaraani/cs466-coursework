@@ -20,7 +20,7 @@ CREATE TABLE Quizes(
 UPDATE Users set lesson='2' where username='testuser1';
 
 INSERT INTO Lessons
-VALUES (3, "XML & AJAX", '' , 3); 
+VALUES (2, "" , 2); 
 
 
 users:

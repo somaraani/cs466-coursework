@@ -89,6 +89,11 @@
         <br />
         <h2>Lesson <?php print $lesson['id'] ?> Quiz</h2>
         <p>Finish quiz <?php print $lesson['id'] ?> to complete the lesson and unlock the next one. You must get all the questions correct to pass.</p>
+
+        <?php if($_SESSION['lesson'] > $lesson['id']) : ?>
+            <p class="green">You have already passed this quiz, but you can try it again.</p>
+        <?php endif ?>
+
         <a href="quiz.php?id=<?php print $lesson['quiz'] ?>"><button class="orange-btn">Start Quiz</button></a>
     </div>
    

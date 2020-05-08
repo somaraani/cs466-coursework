@@ -21,6 +21,14 @@ html, body {
     display: inline;
 }
 
+.green {
+    color: green;
+}
+
+.quiz-btn {
+    margin-right: 200px;
+}
+
 .right {
     display: inline;
     color: white;

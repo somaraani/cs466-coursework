@@ -3,6 +3,7 @@
 
     $username = "";
     $correct = -1;
+    $totalLessons = 999;
 
     if(!isset($_SESSION['user'])) {
         header("location: index.php");
@@ -34,12 +35,16 @@
             }
         }
 
-        if($correct == count($xml->children())) {
+        if($correct == count($xml->children()) and $_SESSION['lesson'] == $id) {
             $lesson = $id + 1;
             $statement = "UPDATE Users SET lesson='$lesson' where username='$username'";
             $database->query($statement);
             $_SESSION['lesson'] = $lesson;
         }
+
+        $totalQuery = "SELECT COUNT(*) FROM Lessons";
+        $totalLessons = $database->query($totalQuery)->fetch_array()[0];
+
     }
 ?>
 <!DOCTYPE html>
@@ -87,7 +92,7 @@
               <?php echo $xml->question[$q]->description?>
             </p>
             <?php for($a = 0; $a < 4; $a++) : ?>
-            <input type="radio" value="<?php echo $a ?>" name="<?php echo $q ?>">
+            <input type="radio" value="<?php echo $a ?>" name="<?php echo $q ?>" required>
             <label>
               <?php echo $xml->question[$q]->options->option[$a] ?>
             </label>
@@ -113,7 +118,13 @@
       </p>
 
       <?php if($correct == count($xml->children())) : ?>
-            <p>You have gained access to lesson <?php print $id + 1 ?>
+
+            <?php if($id == $totalLessons) : ?>
+              <p>You have completed the final available lesson! Nice job :) </p>
+            <?php else : ?>
+              <p>You have gained access to lesson <?php print $id + 1 ?> </p>
+            <?php endif ; ?>
+
             <br />
             <br />
             <a href="account.php"><button class="orange-btn">View Lessons</button></a>
