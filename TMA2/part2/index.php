@@ -11,7 +11,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         
-        $query = "SELECT * FROM Users WHERE username='$username'";
+        $query = "SELECT * FROM Students WHERE username='$username'";
         $result = $database->query($query)->fetch_array();
         
         if(empty($result) or $result['password'] != $_POST['password']) {

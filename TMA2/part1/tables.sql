@@ -10,7 +10,3 @@ CREATE TABLE Bookmarks (
     username VARCHAR(30) NOT NULL,
     FOREIGN KEY (username) REFERENCES Users(username) ON DELETE CASCADE 
 );
-
-users:
-testuser1, password
-testuser2, password

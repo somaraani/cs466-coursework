@@ -9,7 +9,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $checkStatement = "SELECT COUNT(*) FROM Users where username='$username'";
+        $checkStatement = "SELECT COUNT(*) FROM Students where username='$username'";
         $result = $database->query($checkStatement)->fetch_array();
 
         if ((int)$result[0] >= 1) {
@@ -24,7 +24,7 @@
 
         //if no errors create 
         if($error == "") {
-            $statement = "INSERT INTO Users(username, password, lesson) VALUES('$username', '$password', '1')";
+            $statement = "INSERT INTO Students(username, password, lesson) VALUES('$username', '$password', '1')";
 
             if($database->query($statement) === true) {
                 $_SESSION['user'] = $username;

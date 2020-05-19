@@ -13,7 +13,16 @@
     function logout() {
       session_destroy();
       header("location: index.php");
-  }
+    }
 
-    $database = mysqli_connect("localhost", "root", "", "lms");
+
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+
+    $database = mysqli_connect($server, $username, $password, $db);
+
 ?>

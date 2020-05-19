@@ -37,7 +37,7 @@
 
         if($correct == count($xml->children()) and $_SESSION['lesson'] == $id) {
             $lesson = $id + 1;
-            $statement = "UPDATE Users SET lesson='$lesson' where username='$username'";
+            $statement = "UPDATE Students SET lesson='$lesson' where username='$username'";
             $database->query($statement);
             $_SESSION['lesson'] = $lesson;
         }
