@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="eduk8 padded-content">
+    <div class="eduk8 padded-content content">
 
         <?php if($_SESSION['lesson'] == 0) : ?>
             <p>You haven't started any lessons yet. Start by clicking on lesson 1 below!</p>

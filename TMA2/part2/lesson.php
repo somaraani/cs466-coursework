@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    <div class="eduk8 padded-content">        
+    <div class="eduk8 padded-content content">        
         <?php print $content ?>
         <br />
         <h2>Lesson <?php print $lesson['id'] ?> Quiz</h2>

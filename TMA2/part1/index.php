@@ -42,7 +42,7 @@
         <h1 class="padded">BookMarks</h1>
     </div>
 
-    <div class="content">
+    <div class="padded-content content">
         <p>Welcome to BookMarks! Please login to view your bookmarks, or view the most popular bookmarks below.</p>
 
         <div class="login">

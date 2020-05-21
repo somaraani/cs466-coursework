@@ -46,7 +46,7 @@
         <h1 class="padded">BookMarks</h1>
     </div>
 
-    <div class="content">
+    <div class="padded-content content">
         <p>Create your account to start saving bookmarks!</p>
         <div class="login">
             <form method = "post" action="create.php">

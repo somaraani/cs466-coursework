@@ -79,7 +79,7 @@
       </div> 
     </div>
 
-    <div class="eduk8 padded-content">        
+    <div class="eduk8 padded-content content">        
       <?php if($correct == -1) : ?>
       <p>Finish quiz 
         <?php print $id ?> to complete the lesson and unlock the next one.

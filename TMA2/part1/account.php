@@ -104,7 +104,7 @@
         <button onclick="hideOverlay()"> Cancel </button>
     </div>
 
-    <div class="content">
+    <div class="padded-content content">
 
         
         <h2 id="create" onclick="showOverlay()"> + create new bookmark</h2>

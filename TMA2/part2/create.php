@@ -50,7 +50,7 @@
     </div>
 
 
-    <div class="padded-content"">
+    <div class="padded-content content">
         <br />
         <p>Create your account to start learning!</p>
         <br />

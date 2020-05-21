@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="shared/style.css">
+</head>
+
+<body>
+
+    <div class="header orange-back">
+        <div class="padded-content">
+            <h1>TMA2 - Somar Aani</h1>
+        </div>
+    </div>
+
+    <div class="padded-content landing">
+        <h1 class="black"> Computer Science 466: </h1>
+        <h2 class="black"> Advanced Technologies for Web-Based Systems </h2>
+        <h1 class="accent"> Assignment #2 </h1>
+        <h2 class="orange">Somar Aani</h2>
+        <h2 class="orange">3468934</h2>
+        <p> Assignment started on <span>May 2nd 2020</span>, and completed <span>May 22nd 2020</span>. In total, it took around <span>33 hours.</span></p>
+        
+        <div>
+            <h1 class="heading">Part 1 - Bookmarks</h1>
+            <p>For this part, we had to create a web application using PHP and MySQL that would allow users
+                to keep a list of bookmarks. 
+            </p>
+
+            <p>This application is divided into PHP modules each with a specific purpose.</p>
+            <ul>
+                <li><span>session.php:</span> keeps track of current session and initializes the database</li>
+                <li><span>index.php:</span> default landing page. Allows logging in and has list of top bookmarks</li>
+                <li><span>create.php:</span> allows creating a new account</li>
+                <li><span>account.php:</span> displays the users bookmarks, redirects here when user is logged in</li>
+            </ul>
+
+            <p>The application uses a database to store <span>Users</span> and <span>Bookmarks</span>. 
+                The tables are created using the following SQL code: </p>
+
+            <div class="code">
+                <p>
+                <br />
+                CREATE TABLE Users ( <br />
+                &emsp;username VARCHAR(30) PRIMARY KEY NOT NULL, <br />
+                &emsp;password VARCHAR(30) NOT NULL <br />
+                ); <br />
+                <br />
+                CREATE TABLE Bookmarks ( <br />
+                &emsp;id INT(6) unsigned AUTO_INCREMENT PRIMARY KEY, <br />
+                &emsp;name VARCHAR(50) NOT NULL, <br />
+                &emsp;url VARCHAR(256) NOT NULL,  <br />
+                &emsp;username VARCHAR(30) NOT NULL, <br />
+                &emsp;FOREIGN KEY (username) REFERENCES Users(username) ON DELETE CASCADE  <br />
+                ); <br />
+                </p>
+            </div>
+
+            <p>This app is deployed on a Heroku server and can be accessed by clicking the button below: </p>
+            <a target="_blank" href="http://somarani.herokuapp.com/TMA2/part1/index.php"><button class="orange-btn">Open Bookmarks</button></a>
+
+            
+            
+            
+        </div>
+    
+    </div>
+
+</body>
