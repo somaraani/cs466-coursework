@@ -43,7 +43,9 @@
 
 <body>
     <div class="header">
-        <h1 class="padded-content">BookMarks</h1>
+        <div class="padded-content">
+            <h1>BookMarks</h1>
+        </div>
     </div>
 
     <div class="padded-content content">
