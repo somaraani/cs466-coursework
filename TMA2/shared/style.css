@@ -200,7 +200,7 @@ table {
 .status {
     float: right;
     margin-top: -44px;
-    padding-right: 25px;
+    margin-right: 25px;
 }
 
 .in-code {

@@ -78,7 +78,7 @@
     </div>
 
     <div class="header">
-        <h1 class="padded">BookMarks</h1>
+        <h1 class="padded-content">BookMarks</h1>
         <div class="right">
         <p><?php print $_SESSION['username']?></p>
         <form method="post">

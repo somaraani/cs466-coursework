@@ -41,7 +41,6 @@
     </div>
 
     <div class="padded-content content">
-        <br />
         <p>Welcome to the EduK8 Learning Mangement System! Get started  by logging in or creating an account.</p>
         <br />
         <form method="post" action="index.php">
