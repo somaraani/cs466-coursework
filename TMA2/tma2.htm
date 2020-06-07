@@ -19,12 +19,13 @@
         <h1 class="accent"> Assignment #2 </h1>
         <h2 class="orange">Somar Aani</h2>
         <h2 class="orange">3468934</h2>
-        <p> Assignment started on <span>May 2nd 2020</span>, and completed <span>May 22nd 2020</span>. In total, it took around <span>33 hours.</span></p>
-        
+        <p> Assignment started on <span>May 2nd 2020</span>, and completed <span>May 26th 2020</span>. In total, it took
+            around <span>33 hours.</span></p>
+
         <div>
             <h1 class="heading">Part 1 - Bookmarks</h1>
             <p>For this part, we had to create a web application using PHP and MySQL that would allow users
-                to keep a list of bookmarks. 
+                to keep a list of bookmarks.
             </p>
 
             <p>This application is divided into PHP modules each with a specific purpose.</p>
@@ -35,28 +36,29 @@
                 <li><span>account.php:</span> displays the users bookmarks, redirects here when user is logged in</li>
             </ul>
 
-            <p>The application uses a database to store <span>Users</span> and <span>Bookmarks</span>. 
+            <p>The application uses a database to store <span>Users</span> and <span>Bookmarks</span>.
                 The tables are created using the following SQL code: </p>
 
             <div class="code">
                 <p>
-                <br />
-                CREATE TABLE Users ( <br />
-                &emsp;username VARCHAR(30) PRIMARY KEY NOT NULL, <br />
-                &emsp;password VARCHAR(30) NOT NULL <br />
-                ); <br />
-                <br />
-                CREATE TABLE Bookmarks ( <br />
-                &emsp;id INT(6) unsigned AUTO_INCREMENT PRIMARY KEY, <br />
-                &emsp;name VARCHAR(50) NOT NULL, <br />
-                &emsp;url VARCHAR(256) NOT NULL,  <br />
-                &emsp;username VARCHAR(30) NOT NULL, <br />
-                &emsp;FOREIGN KEY (username) REFERENCES Users(username) ON DELETE CASCADE  <br />
-                ); <br />
+                    <br />
+                    CREATE TABLE Users ( <br />
+                    &emsp;username VARCHAR(30) PRIMARY KEY NOT NULL, <br />
+                    &emsp;password VARCHAR(30) NOT NULL <br />
+                    ); <br />
+                    <br />
+                    CREATE TABLE Bookmarks ( <br />
+                    &emsp;id INT(6) unsigned AUTO_INCREMENT PRIMARY KEY, <br />
+                    &emsp;name VARCHAR(50) NOT NULL, <br />
+                    &emsp;url VARCHAR(256) NOT NULL, <br />
+                    &emsp;username VARCHAR(30) NOT NULL, <br />
+                    &emsp;FOREIGN KEY (username) REFERENCES Users(username) ON DELETE CASCADE <br />
+                    ); <br />
                 </p>
             </div>
-            
-            <p>You can create a new account to start saving bookmarks. There are two test accounts that already have bookmarks with the following credentials:</p>
+
+            <p>You can create a new account to start saving bookmarks. There are two test accounts that already have
+                bookmarks with the following credentials:</p>
             <div class="code">
                 <br />
                 username: testuser1 <br />
@@ -67,11 +69,187 @@
             </div>
 
             <p>This app is deployed on a Heroku server and can be accessed by clicking the button below: </p>
-            <a target="_blank" href="http://somarani.herokuapp.com/TMA2/part1/index.php"><button class="orange-btn">Open Bookmarks</button></a>
+            <a target="_blank" href="http://somarani.herokuapp.com/TMA2/part1/index.php"><button class="orange-btn">Open
+                    Bookmarks</button></a>
 
-            
+            <h1 class="heading">Part 2 - Learning Management System</h1>
+            <h2 class="orange">System Analysis & Design</h2>
+            <p>This application is divided into PHP modules each with a specific purpose.</p>
+            <ul>
+                <li><b>session.php:</b>
+                    <p> Creates <span>$_SESSION</span> and uses environment variable to initialize
+                        <span>$database</span> object which is used by all other modules. </p>
+
+                </li>
+                <li><b>index.php:</b>
+                    <p>Default landing page - allows logging in. If <span>$_SESSION['user']</span> is already set, will
+                        redirect to <span>account.php</span> <br>
+                        Logging in is done through a POST request which uses the database to validate credentials. <br>
+                        If credentials are correct, the <span>user</span> and <span>lesson</span> session variables are
+                        populated from the database, and then redirects to <span>account.php</span></p>
+                </li>
+                <img width="800" src="https://i.imgur.com/BwO0W1w.png">
+                <li><b>create.php:</b>
+                    <p>Allows creating a new account through a POST request. Validates username against database to
+                        ensure it's unique. <br>
+                        If credentials are unique and meet requirements, a user is created in the database,
+                        <span>$_SESSION</span> variables are set, and redirects to <span>account.php</span> </p>
+                </li>
+                <img width="800" src="https://i.imgur.com/ydT4nYC.png">
+                <li><b>account.php:</b>
+                    <p>Displays the user's available and completed lessons. <br> Uses <span>user</span> session variable
+                        to find out which user is logged in,
+                        and <span>lesson</span> to find out which lesson they are on.
+                        <br>Ensures can only access lessons that are available to user. <br>
+                        Clicking on a lessons redirects to <span>lesson.php?id={id}</span> where {id} is the id of the
+                        lesson. <br>
+                        Sign out button in top right allows user to log out of their account.</p>
+                </li>
+                <img width="800" src="https://i.imgur.com/CYz059A.png">
+                <li><b>lesson.php:</b>
+                    <p>Displays a specific lesson. Contains EML parser to change lessons to a readable format.
+                        <br> Uses query parameter <span>id</span> (passed from <span>account.php</span>) to find out
+                        which lesson to load.
+                        <br> Makes database call to get the content of lesson with specified <span>id</span>, then
+                        parses and displays it. <br>
+                        Has a check to ensure user has access to lesson with specified <span>id</span>, otherwise
+                        redirects to <span>account.php</span> <br>
+                        Creates quiz button at the end that redirects to this lessons quiz by using the same
+                        <span>id</span> <br>
+                        Top bar has back button in top left to return to lessons, and logout at top right to sign out.
+                    </p>
+                </li>
+                <img width="800" src="https://i.imgur.com/flDZMMS.png">
+                <li><b>quiz.php:</b>
+                    <p> Displays a specific quiz, has quiz parser to create HTML quiz.
+                        <br> Uses query parameter <span>id</span> to find out which quiz to load.
+                        <br> Quiz answers are submitted using a <span>POST</span> request.
+                        <br> If all answers are correct, increments users <span>lesson</span> value, and saves that in
+                        database
+                        <br> Has a check to ensure user has access to quiz with specified <span>id</span>, otherwise
+                        redirects to <span>account.php</span>
+                    </p>
+                </li>
+                <img width="800" src="https://i.imgur.com/rPUB5BH.png">
+
+            </ul>
+
+            <h2 class="orange">Educational Markup Language</h2>
+            <p>The EML I designed is based on XML, but does not follow it perfectly, as to make it a little easier to
+                work with. There is no root element. </p>
+
+            <ul>
+                <li><b>header</b>: creates a header in the lesson</li>
+                <li><b>text</b>: used to write regular lesson content. Each text block is a paragraph.</li>
+                <li><b>#!{text}!#</b>: <span>#!</span> and <span>!#</span> are used as open and close tags to highlight
+                    a word or phrase.</li>
+                <li><b>code</b>: used to create a code section. To define a new code line, it must begin with
+                    <span>##</span>.
+                    To format your code, you can add tabs by putting <span>T</span> inside the <span>##</span>. For
+                    example, <span>#T#</span> defines a line with one tab, upto <span>#TTTT#</span> which defines 4
+                    tabs.</li>
+            </ul>
+
+            <p>For example, the following EML: </p>
+
+            <div class="code">
+                <p>
+                    <br />
+                    &#x3C;heading&#x3E;1.1 Basics of HTML&#x3C;/heading&#x3E;<br>
+                    &#x3C;text&#x3E;HTML is the basic building block of most websites. HTML stands for Hypertext Markup
+                    Language, and is what defines the content and structure of a webpage.&#x3C;/text&#x3E;<br>
+                    &#x3C;text&#x3E;To get started, open your text editor and create a new file. Call it
+                    index.html.&#x3C;/text&#x3E;<br>
+                    &#x3C;text&#x3E;Paste the following code into your textfile, and save it.&#x3C;/text&#x3E;<br>
+                    &#x3C;code&#x3E;<br>
+                    ##&#x3C;!DOCTYPE html&#x3E;<br>
+                    ##&#x3C;html&#x3E;<br>
+                    ##&#x3C;head&#x3E;<br>
+                    #T#&#x3C;title&#x3E;Website title&#x3C;/title&#x3E;<br>
+                    ##&#x3C;/head&#x3E;<br>
+                    ##&#x3C;body&#x3E;<br>
+                    #T#&#x3C;h1&#x3E;A heading&#x3C;/h1&#x3E;<br>
+                    #T#&#x3C;p&#x3E;Some text here&#x3C;/p&#x3E;<br>
+                    ##&#x3C;/body&#x3E;<br>
+                    ##&#x3C;/html&#x3E;<br>
+                    &#x3C;/code&#x3E;<br>
+                    &#x3C;text&#x3E;The first line #!&#x3C;!DOCTYPE html&#x3E;!# specifies that this is an HTML
+                    document.&#x3C;/text&#x3E;<br>
+                    &#x3C;text&#x3E;HTML syntax is made up of tags, that are enclosed in #!<>!#&#x3C;/text&#x3E;
+                </p>
+            </div>
+            <p>produces the following page: </p>
+            <img src="https://i.imgur.com/n6fiVjg.png">
+
+            <p>Notice how all the code lines begin with <span>##</span> or <span>#T#</span>, and how the tabulation
+                works.</p>
+            <p>In addition, notice how <span>#!{text}!#</span> produces highlighted orange text. </p>
+
+            <br>
+            <p>The quizes use their own markup that has the following format </p>
+
+            <div class="code">
+                <p>
+                    <br />
+                    &lt;quiz&gt; <br />
+                    &emsp;&lt;question&gt;<br />
+                    &emsp;&emsp;&lt;description&gt;Question text here&lt;/description&gt;<br />
+                    &emsp;&emsp;&lt;options&gt;<br />
+                    &emsp;&emsp;&emsp;&lt;option&gt;option 1&lt;/option&gt;<br />
+                    &emsp;&emsp;&emsp;&lt;option correct=&quot;true&quot;&gt;option 2&lt;/option&gt;<br />
+                    &emsp;&emsp;&emsp;&lt;option&gt;option 3&lt;/option&gt;<br />
+                    &emsp;&emsp;&emsp;&lt;option&gt;option 4&lt;/option&gt;<br />
+                    &emsp;&emsp;&lt;/options&gt;<br />
+                    &emsp;&lt;/question&gt;<br />
+                    <br />
+                    &emsp;&lt;question&gt;<br />
+                    &emsp;&emsp;... <br /> <br />
+                    &lt;/quiz&gt;<br />
+                </p>
+            </div>
+
+            <h2 class="orange">Database Design</h2>
+
+            <p>This application uses 3 database tables. <span>Students</span>, which stores the students credentials and
+                their progress. <span>Lessons</span> which contains the lessons and their content, and
+                <span>Quizes</span> which stores quiz content.</p>
+            <p>The file <span>tables.sql</span> contains an SQL script that creates the tables and populates them with
+                the lessons and quizes. The table init section is as follows: </p>
+
+            <div class="code">
+                <p>
+                    <br />
+                    <br /> CREATE TABLE Students (
+                    <br /> &emsp;username VARCHAR(30) PRIMARY KEY NOT NULL,
+                    <br /> &emsp;password VARCHAR(30) NOT NULL,
+                    <br /> &emsp;lesson INT NOT NULL
+                    <br /> );
+                    <br />
+                    <br /> CREATE TABLE Lessons (
+                    <br /> &emsp;id INT(6) unsigned AUTO_INCREMENT PRIMARY KEY,
+                    <br /> &emsp;name VARCHAR(100) NOT NULL,
+                    <br /> &emsp;content TEXT NOT NULL,
+                    <br /> &emsp;quiz INT(30) NOT NULL
+                    <br /> );
+                    <br />
+                    <br /> CREATE TABLE Quizes(
+                    <br /> &emsp;id INT NOT NULL,
+                    <br /> &emsp;content TEXT NOT NULL
+                    <br /> );
+                </p>
+            </div>
         </div>
-    
+
+        <p>Notice how the <span>Lessons</span> table references the <span>Quizes</span> table.</p>
+
+        <p>You can view the full <span>tables.sql</span> <a href="part2/tables.sql">here.</a></p>
+
+        <br>
+
+        <p>This app is deployed on a Heroku server and can be accessed by clicking the button below: </p>
+        <a target="_blank" href="http://somarani.herokuapp.com/TMA2/part2/index.php"><button class="orange-btn">Open
+                EduK8</button></a>
+
     </div>
 
 </body>
